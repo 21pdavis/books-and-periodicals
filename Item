@@ -1,1 +1,23 @@
+package objectsAndInterfaces;
 
+public abstract class Item {
+	private String title;
+	
+	public Item() {
+		title = "";
+	}
+	
+	public Item(String title) {
+		this.title = title;
+	}
+	
+	public void setTitle(String t) {
+		title = t;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public abstract String print();
+}
