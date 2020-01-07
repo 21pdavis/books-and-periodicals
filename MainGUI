@@ -1,1 +1,27 @@
+package guis;
 
+import javax.swing.*;
+import BreezySwing.*;
+import objectsAndInterfaces.Item;
+import objectsAndInterfaces.Comparable;
+
+import java.util.ArrayList;
+
+@SuppressWarnings({"unused", "serial"})
+public class MainGUI extends GBFrame{
+	//Forms and variables
+	private static JFrame frm = new JFrame();
+	private ArrayList<Comparable> comparables = new ArrayList<Comparable>();
+	private ArrayList<Item> items = new ArrayList<Item>();
+	//Form elements
+	private JLabel welcomeLabel = addLabel("Welcome to the Books and Periodicals Program", 1,1,1,1);
+	private JLabel bookInputInstructions = addLabel("To input a nonperiodical book:", 2,1,1,1);
+	private JLabel bookTitleInputInstrucions = addLabel("Title: ", 3,1,1,1);
+	
+	
+	public static void main(String[] args) {
+		frm.setTitle("Books and Periodicals");
+		frm.setSize(450,500);
+		frm.setVisible(true);
+	}
+}
