@@ -1,0 +1,13 @@
+package objectsAndInterfaces;
+
+public class Book extends Item implements Comparable {
+
+	public int compareTo() {
+		return 0;
+	}
+
+	public String print() {
+		return null;
+	}
+	
+}
