@@ -1,13 +1,24 @@
 package objectsAndInterfaces;
 
-public class Periodical extends Item implements Comparable {
-
+public class Periodical extends Item {
+	private int issueNum;
+	
+	public Periodical() {
+		setTitle("");
+		issueNum = 0;
+	}
+	
+	public Periodical(String title, int issueNum) {
+		setTitle(title);
+		this.issueNum = issueNum;
+	}
+	
 	public int compareTo() {
 		return 0;
 	}
 
 	public String print() {
-		return null;
+		return "Title: " + getTitle() + ", Issue #: " + issueNum;
 	}
 
 }
