@@ -1,42 +1,73 @@
+
 package guis;
 
 import javax.swing.*;
 import BreezySwing.*;
 import objectsAndInterfaces.Item;
+import objectsAndInterfaces.Book;
+import objectsAndInterfaces.Periodical;
 import objectsAndInterfaces.Comparable;
-
 import java.util.ArrayList;
 
-@SuppressWarnings({"unused", "serial"})
-public class MainGUI extends GBFrame{
-	//Forms and variables
-	private static JFrame frm = new JFrame();
-	private ArrayList<Comparable> comparables = new ArrayList<Comparable>();
+@SuppressWarnings({ "unused", "serial" })
+public class MainGUI extends GBFrame {
+	// Forms and variables
+	private static JFrame frm = new MainGUI();
 	private ArrayList<Item> items = new ArrayList<Item>();
-	//Form elements
-	private JLabel welcomeLabel = addLabel("Welcome to the Books and Periodicals Program", 1,1,1,1);
-	private JLabel bookInputLabel = addLabel("Input a nonperiodical book:", 2,1,1,1);
-	private JLabel bookTitleInputLabel = addLabel("Title: ", 3,1,1,1);
-  private JTextFied bookTitleInputField = addTextField("", 3,2,1,1);
-  private JLabel bookAuthorInputLabel = addLabel("Author: ", 4,1,1,1);
-	private JTextField bookAuthorInputField = addTextField("", 4,2,1,1);
-  private JButton bookInputButton = addButton("Input Book", 5,1,1,1);
-  private JLabel periodicalInputLabel = addLabe("Input a periodical:", 6,1,1,1);
-  private JLabel periodicalTitleLabel = addLabel("Title: ", 6,1,1,1);
-  private JTextField periodicalTitleField = addTextField("", 6,2,1,1);
-  private JLabel periodicalNumberLabel = addLabel("Issue Number: ", 7,1,1,1);
-  private IntegerField periodicalNumberField = addIntegerField = addIntegerField(0, 7,2,1,1);
-  private JButton inputPeriodicalNumber = addButton("Input Periodical", 8,1,1,1);
-  private JButton exitButton = addButton("Exit", 9,1,1,1);
-  private JButton resetButton = addBUtton("Reset", 9,2,1,1);
+	// Form elements
+	private JLabel welcomeLabel = addLabel("Welcome to the Books and Periodicals Program", 1, 1, 1, 1);
+	private JLabel bookLabel = addLabel("Input a book:", 2, 1, 1, 1);
+	private JLabel bookTitleLabel = addLabel("Title: ", 3, 1, 1, 1);
+	private JTextField bookTitleField = addTextField("", 3, 2, 1, 1);
+	private JLabel bookAuthorLabel = addLabel("Author: ", 4, 1, 1, 1);
+	private JTextField bookAuthorField = addTextField("", 4, 2, 1, 1);
+	private JButton bookInputButton = addButton("Input Book", 5, 1, 1, 1);
+	private JLabel periodicalLabel = addLabel("Input a periodical:", 6, 1, 1, 1);
+	private JLabel periodicalTitleLabel = addLabel("Title: ", 7, 1, 1, 1);
+	private JTextField periodicalTitleField = addTextField("", 7, 2, 1, 1);
+	private JLabel periodicalNumberLabel = addLabel("Issue Number: ", 8, 1, 1, 1);
+	private IntegerField periodicalNumberField = addIntegerField(0, 8, 2, 1, 1);
+	private JButton periodicalInputButton = addButton("Input Periodical", 9, 1, 1, 1);
+	private JButton compareButton = addButton("Compare Items", 10,1,1,1);
+	private JButton exitButton = addButton("Exit", 11, 1, 1, 1);
+	private JButton resetButton = addButton("Reset", 11, 2, 1, 1);
 
-  public void buttonClicked(JButton buttonObj){
-    `
-  }
+	public void buttonClicked(JButton buttonObj) {
+		if (buttonObj == bookInputButton) {
+			createBook(bookTitleField.getText(), bookAuthorField.getText());
+		}
 
+		if (buttonObj == periodicalInputButton) {
+			createPeriodical(periodicalTitleField.getText(), periodicalNumberField.getNumber());
+		}
+
+		if (buttonObj == exitButton) {
+			System.exit(0);
+		}
+		if (buttonObj == resetButton) {
+			
+		}
+	}
+
+	private void createBook(String title, String author) {
+		items.add(new Book(title, author));
+	}
+
+	private void createPeriodical(String title, int issueNum) {
+		items.add(new Periodical(title, issueNum));
+	}
+	
+	private void resetFrame() {
+		items.clear();
+		bookTitleField.setText("");
+		bookAuthorField.setText("");
+		periodicalTitleField.setText("");
+		periodicalNumberField.setNumber(0);
+	}
+	
 	public static void main(String[] args) {
 		frm.setTitle("Books and Periodicals");
-		frm.setSize(450,500);
+		frm.setSize(450, 500);
 		frm.setVisible(true);
 	}
 }
