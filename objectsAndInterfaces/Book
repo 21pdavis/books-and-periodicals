@@ -1,13 +1,24 @@
 package objectsAndInterfaces;
 
-public class Book extends Item implements Comparable {
-
+public class Book extends Item {
+	private String author;
+	
+	public Book() {
+		setTitle("");
+		author = "";
+	}
+	
+	public Book(String title, String author) {
+		setTitle(title);
+		this.author = author;
+	}
+	
 	public int compareTo() {
 		return 0;
 	}
 
 	public String print() {
-		return null;
+		return "Title: " + getTitle() + ", Author: " + author;
 	}
 	
 }
