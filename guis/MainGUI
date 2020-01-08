@@ -15,10 +15,25 @@ public class MainGUI extends GBFrame{
 	private ArrayList<Item> items = new ArrayList<Item>();
 	//Form elements
 	private JLabel welcomeLabel = addLabel("Welcome to the Books and Periodicals Program", 1,1,1,1);
-	private JLabel bookInputInstructions = addLabel("To input a nonperiodical book:", 2,1,1,1);
-	private JLabel bookTitleInputInstrucions = addLabel("Title: ", 3,1,1,1);
-	
-	
+	private JLabel bookInputLabel = addLabel("Input a nonperiodical book:", 2,1,1,1);
+	private JLabel bookTitleInputLabel = addLabel("Title: ", 3,1,1,1);
+  private JTextFied bookTitleInputField = addTextField("", 3,2,1,1);
+  private JLabel bookAuthorInputLabel = addLabel("Author: ", 4,1,1,1);
+	private JTextField bookAuthorInputField = addTextField("", 4,2,1,1);
+  private JButton bookInputButton = addButton("Input Book", 5,1,1,1);
+  private JLabel periodicalInputLabel = addLabe("Input a periodical:", 6,1,1,1);
+  private JLabel periodicalTitleLabel = addLabel("Title: ", 6,1,1,1);
+  private JTextField periodicalTitleField = addTextField("", 6,2,1,1);
+  private JLabel periodicalNumberLabel = addLabel("Issue Number: ", 7,1,1,1);
+  private IntegerField periodicalNumberField = addIntegerField = addIntegerField(0, 7,2,1,1);
+  private JButton inputPeriodicalNumber = addButton("Input Periodical", 8,1,1,1);
+  private JButton exitButton = addButton("Exit", 9,1,1,1);
+  private JButton resetButton = addBUtton("Reset", 9,2,1,1);
+
+  public void buttonClicked(JButton buttonObj){
+    `
+  }
+
 	public static void main(String[] args) {
 		frm.setTitle("Books and Periodicals");
 		frm.setSize(450,500);
