@@ -1,0 +1,31 @@
+package guis;
+
+import javax.swing.*;
+import BreezySwing.*;
+import objectsAndInterfaces.Item;
+import objectsAndInterfaces.Book;
+import objectsAndInterfaces.Periodical;
+import objectsAndInterfaces.Comparable;
+import java.util.ArrayList;
+
+@SuppressWarnings({ "unused", "serial" })
+public class CompareGUI extends GBDialog {
+	private JLabel welcomeLabel = addLabel("Compare Books with other Books and Periodicals with other Periodicals", 1, 2, 1, 1);
+	private JLabel bookCompareLabel = addLabel("Compare book with preexisting book:", 2, 1, 1, 1);
+	private JLabel bookTitleLabel = addLabel("Title: ", 3, 1, 1, 1);
+	private JTextField bookTitleField = addTextField("", 3, 2, 1, 1);
+	private JLabel bookAuthorLabel = addLabel("Author: ", 4, 1, 1, 1);
+	private JTextField bookAuthorField = addTextField("", 4, 2, 1, 1);
+	private JButton compareBookButton = addButton("Comapare Book", 5, 1, 1, 1);
+
+	public void buttonClicked(JButton buttonObj) {
+
+	}
+
+	public CompareGUI(JFrame frm, ArrayList<Item> items) {
+		super(frm);
+		setTitle("Compare Inputted Elements");
+		setSize(400, 400);
+	}
+
+}
