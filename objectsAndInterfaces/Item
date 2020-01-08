@@ -1,6 +1,6 @@
 package objectsAndInterfaces;
 
-public abstract class Item {
+public abstract class Item implements Comparable{
 	private String title;
 	
 	public Item() {
@@ -20,4 +20,6 @@ public abstract class Item {
 	}
 	
 	public abstract String print();
+	
+	public abstract int compareTo();
 }
