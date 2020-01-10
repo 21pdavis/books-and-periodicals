@@ -20,6 +20,4 @@ public abstract class Item implements Comparable{
 	}
 	
 	public abstract String print();
-	
-	public abstract int compareTo();
 }
