@@ -1,5 +1,0 @@
-package objectsAndInterfaces;
-
-public interface Comparable {
-	public int compareTo();
-}
