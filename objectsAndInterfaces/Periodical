@@ -13,12 +13,17 @@ public class Periodical extends Item {
 		this.issueNum = issueNum;
 	}
 	
-	public int compareTo() {
+	public int compareTo(Item comparee, Item comparer) {
 		return 0;
 	}
 
 	public String print() {
 		return "Title: " + getTitle() + ", Issue #: " + issueNum;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		return 0;
 	}
 
 }
